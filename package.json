@@ -1,5 +1,5 @@
 {
-  "homepage" : "https://emmanueloloke.github.io/robofriends",
+  "homepage": "https://emmanueloloke.github.io/robofriends",
   "name": "robofriends",
   "version": "0.1.0",
   "private": true,
@@ -7,9 +7,10 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^0.9.5",
     "tachyons": "^4.12.0",
     "web-vitals": "^1.1.2"
   },
