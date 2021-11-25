@@ -32,7 +32,7 @@ class App extends Component {
 			return <div className="tc">
 						console.log({searchfield})
 						<h1 className='f1'>Robofriends</h1>
-						<SearchBox searchChange={this.state.onSearchChange}/>
+						<SearchBox searchChange={this.onSearchChange}/>
 						<Scroll>
 							<NotFound arr={filteredRobots}/>
 						</Scroll>
