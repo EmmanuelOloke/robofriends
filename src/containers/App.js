@@ -3,6 +3,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from '../components/ErrorBoundary';
+import NotFound from '../components/NotFound';
 import './App.css'
 
 class App extends Component {
@@ -26,19 +27,34 @@ class App extends Component {
 		const filteredRobots = robots.filter(robot => {
 			return robot.name.toLowerCase().includes(searchfield.toLowerCase())
 		})
-		
+
+		if (filteredRobots.length === 0){
+			return <div className="tc">
+						console.log({searchfield})
+						<h1 className='f1'>Robofriends</h1>
+						<SearchBox searchChange={this.state.onSearchChange}/>
+						<Scroll>
+							<NotFound arr={filteredRobots}/>
+						</Scroll>
+					</div>
+					
+		}
+		else {
 			return !robots.length ?
-				<h1 className='tc'>LOADING</h1> 
-				:
-				<div className='tc'>
-					<h1 className='f1'>Robofriends</h1>
-					<SearchBox searchChange={this.onSearchChange}/>
-					<Scroll>
-						<ErrorBoundary>
-							<CardList robots={filteredRobots}/>
-						</ErrorBoundary>
-					</Scroll>
-				</div>
+			<h1 className='tc'>LOADING</h1> 
+			:
+			<div className='tc'>
+				<h1 className='f1'>Robofriends</h1>
+				<SearchBox searchChange={this.onSearchChange}/>
+				<Scroll>
+					<ErrorBoundary>
+						<CardList robots={filteredRobots}/>
+					</ErrorBoundary>
+				</Scroll>
+			</div>
+		}
+		
+		
 	}
 	
 }
