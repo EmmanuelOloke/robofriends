@@ -30,7 +30,6 @@ class App extends Component {
 
 		if (filteredRobots.length === 0){
 			return <div className="tc">
-						console.log({searchfield})
 						<h1 className='f1'>Robofriends</h1>
 						<SearchBox searchChange={this.onSearchChange}/>
 						<Scroll>
